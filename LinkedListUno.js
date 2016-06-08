@@ -2,7 +2,8 @@ var LinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
-
+    
+  // adds Node to the end of linked list
   list.addToTail = function(value) {
     if (list.head === null){
         list.head = Node(value);
@@ -13,7 +14,9 @@ var LinkedList = function() {
         list.tail = list.tail.next;
     }
   };
-
+    
+  // checks if there is a value after head
+    // if value exists then reassign that next value as new head
   list.removeHead = function() {
       var beginning = list.head;
       if (beginning.next === null){
@@ -24,7 +27,8 @@ var LinkedList = function() {
           return beginning.value;
       }
   };
-
+    
+  // Check for whether desired value is in list by looping through list 
   list.contains = function(target) {
     var temp = list.head;
     while (temp.value !== target) {
